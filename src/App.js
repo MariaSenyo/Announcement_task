@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Advertisement from "./components/Advertisements/Advertisement";
+import {createTheme, MuiThemeProvider} from "@material-ui/core";
+import {blue, pink} from "@material-ui/core/colors";
+import Logger from "./utils/Logger";
+import {API} from "./utils/Api";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const theme = createTheme({
+    palette: {
+        primary: {
+            light: blue[400],
+            main: blue[500],
+            dark: blue[600],
+        },
+        secondary: {
+            light: pink[400],
+            main: pink[500],
+            dark: pink[600],
+        },
+    },
+});
+
+const App = () => {
+    API.get("/posts").then(response =>{Logger.info(response)})
+
+    return (
+        <MuiThemeProvider theme={theme}>
+            <Advertisement/>
+        </MuiThemeProvider>
+    );
 }
 
 export default App;

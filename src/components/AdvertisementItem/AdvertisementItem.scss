@@ -1,0 +1,58 @@
+.advertisements__item {
+  width: 100%;
+  max-width: 400px;
+  min-height: 100px;
+
+  padding: 20px 20px 5px 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #000;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+
+  .title {
+    margin-bottom: 20px;
+    width: 100%;
+
+    display: flex;
+    overflow: hidden;
+
+    line-height: 1.5;
+    word-wrap: break-word;
+    text-align: center;
+
+    .edit_title {
+      margin: 0 0 0 auto;
+    }
+  }
+
+  .text {
+    width: 100%;
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+
+    .text_area {
+      overflow: hidden;
+      line-height: 1.5;
+      word-wrap: break-word;
+    }
+  }
+
+  .date {
+    margin: 10px 0 0 auto;
+    font-weight: bold;
+  }
+
+  .delete__advertisements {
+    margin-top: 10px;
+  }
+
+  .edit_text {
+    max-width: 300px;
+    width: 100%;
+  }
+}
